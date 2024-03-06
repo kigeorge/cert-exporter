@@ -23,28 +23,28 @@ certManager:
 
   podAnnotations: {}
   # environment: prod
-  # prometheus.io/scrape: true
-  # prometheus.io/port: 8080
-  # prometheus.io/path: /metrics
+  prometheus.io/scrape: true
+  prometheus.io/port: 8080
+  prometheus.io/path: /metrics
 
   podSecurityContext: {}
   # fsGroup: 2000
 
   securityContext: {}
-    # capabilities:
-    #   drop:s
-    #   - ALL
-    # readOnlyRootFilesystem: true
-    # runAsNonRoot: true
-    # runAsUser: 1000
+    capabilities:
+      drop:s
+      - ALL
+    readOnlyRootFilesystem: true
+    runAsNonRoot: true
+    runAsUser: 1000
 
   resources: {}
-    # limits:
-    #   cpu: 100m
-    #   memory: 128Mi
-    # requests:
-    #   cpu: 100m
-    #   memory: 128Mi
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
 
   nodeSelector: {}
 
@@ -74,7 +74,7 @@ service:
 
   # Requires prometheus-operator to be installed
   serviceMonitor:
-    create: false
+    create: true
 
     # cannot be empty
     additionalLabels:
