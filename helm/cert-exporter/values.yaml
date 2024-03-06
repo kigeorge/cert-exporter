@@ -131,4 +131,4 @@ dashboards:
     grafana_dashboard: "1"
   certManagerDashboard:
     create: true
-  namespace: monitoring
+  namespace: openshift-monitoring
